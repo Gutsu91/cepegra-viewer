@@ -61,6 +61,11 @@ const Accueil = () => {
     }
   };
 
+  // appel du QR
+  const HandleClick = () => {
+    console.log('qr')
+  }
+
   //s'execute lorsque l'input change de valeur
   const HandleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     // update du contenu du pseudalInput dans le state
@@ -75,7 +80,7 @@ const Accueil = () => {
       </button>
       <h1 className="text-2xl font-bold text-center">je suis un logoooo lol</h1>
       <section className="flex flex-col my-0 mx-auto w-4/5">
-        <button className="btn my-4">Scanner QR Code</button> {/* non fonctionnel pour le moment*/}
+        <button className="btn my-4" onClick={HandleClick}>Scanner QR Code</button> {/* non fonctionnel pour le moment*/}
         <div className="flex flex-col w-full border-opacity-50">
           <div className="divider">Se connecter</div>
         </div>

@@ -14,6 +14,7 @@ import Credits from "./views/Credits";
 import Notifications from "./views/Notifications";
 import Gallery from "./views/Gallery";
 import Customizer from "./views/Customizer"
+import QRscreen from "./views/QRscreen"
 
 /* --------------------------------- Interaces --------------------------------- */
 interface UserInfo {id: number; pseudo: string;}
@@ -24,7 +25,7 @@ function App(): JSX.Element {
   /* ----------- state ----------- */
   const userInfo= JSON.parse(localStorage.getItem('userInfo')) 
   const [location, setLocation] = useState('HomeScreen'); // par défaut dit que le path = HomeScreen pour bypasser l'écran de connection si on a déjà userInfo dans local storage
-  const pages = ['Accueil', 'HomeScreen', 'Credits', 'Notifications', 'Gallery', 'Customizer'];
+  const pages = ['Accueil', 'HomeScreen', 'QRscreen','Credits', 'Notifications', 'Gallery', 'Customizer'];
 
   const menuPages = [
     // on défini les liens à afficher dans le menu ainsi que la classe que leur icone utilisera
@@ -32,6 +33,7 @@ function App(): JSX.Element {
     {name: 'HomeScreen', class: 'fa-home'},
     {name: 'Notifications', class: 'fa-envelope'},
     {name: 'Gallery', class: 'fa-film'},
+    {name: 'QRscreen', class: 'fa-film'},
     {name: 'Credits', class: 'fa-laptop-code'},
     {name: 'Customizer', class: 'fa-wand-magic-sparkles'}
   ]
@@ -135,7 +137,8 @@ function App(): JSX.Element {
         {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'Credits' && <Credits />}
         {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'Notifications' && <Notifications />}
         {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'Gallery' && <Gallery />}
-        {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'Customizer' && <Customizer />} 
+        {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'Customizer' && <Customizer />}
+        {JSON.parse(localStorage.getItem('userInfo')) !== null && location === 'QRscreen' && <QRscreen />} 
 </>)
 }
 export default App;

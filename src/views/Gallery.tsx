@@ -1,5 +1,8 @@
+// @ts-nocheck
+import { useState } from "react";
 import ArpersoOK from "../components/ArPersoOK"
-
+import QrReader from "../components/QrReader"
+import React from "react"
 
 const Gallery = () => {
   return (
